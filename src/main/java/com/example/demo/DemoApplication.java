@@ -19,7 +19,7 @@ public class DemoApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 		log.info("Before Free: {} Total: {} Max: {}", FileUtils.byteCountToDisplaySize(Runtime.getRuntime().freeMemory()), FileUtils.byteCountToDisplaySize(Runtime.getRuntime().totalMemory()), FileUtils.byteCountToDisplaySize(Runtime.getRuntime().maxMemory()));
         String[] array = new String[100000 * 100000];
-		System.out.println("Bytes used by array: " + FileUtils.byteCountToDisplaySize(ClassLayout.parseInstance(array).instanceSize()));
+        log.info("Bytes used by array: " + FileUtils.byteCountToDisplaySize(ClassLayout.parseInstance(array).instanceSize()));
 		log.info("After Free: {} Total: {} Max: {}", FileUtils.byteCountToDisplaySize(Runtime.getRuntime().freeMemory()), FileUtils.byteCountToDisplaySize(Runtime.getRuntime().totalMemory()), FileUtils.byteCountToDisplaySize(Runtime.getRuntime().maxMemory()));
 		String[] array2 = new String[100000 * 100000];
         log.info("After2 Free: {} Total: {} Max: {}", FileUtils.byteCountToDisplaySize(Runtime.getRuntime().freeMemory()), FileUtils.byteCountToDisplaySize(Runtime.getRuntime().totalMemory()), FileUtils.byteCountToDisplaySize(Runtime.getRuntime().maxMemory()));
